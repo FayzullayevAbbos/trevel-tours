@@ -1,0 +1,45 @@
+*{
+  font-family: "Poppins", sans-serif;
+}
+.primary-bg-color{
+  background:#925FE2 80.26% !important;;
+}
+.primary-color{
+  color: #925fe2;
+}
+.hero-footer{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.fill {
+  background-color: #925fe2 ;
+  width: 0;
+  height: 100%;
+  
+}
+.start{
+ animation: fill 3s linear forwards; 
+}
+.order {
+  order: 1;
+  animation: order 200ms ;
+}
+@keyframes order {
+  from{
+    order: 1;
+  }
+  to {
+    order:3;
+  }
+}
+@keyframes fill {
+  from {
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+}
