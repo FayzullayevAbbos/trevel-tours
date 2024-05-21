@@ -70,7 +70,7 @@ function Hero() {
             <Button full={false} name='Explore More'/>
           </div>
           <div className='grid grid-cols-4  lg:mx-[100px] mx-5 gap-10 mt-10 lg:mt-[80px]'>
-            {countries.map((e, i) => (
+            {countries.map((_, i) => (
               <div onClick={()=> {
                 setCurrentCountryIndex(i)
               }} className='w-full h-[2px] lg:h-[3px] bg-white cursor-pointer'>
