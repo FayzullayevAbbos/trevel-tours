@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Button from "../../../components/Button";
 import HomoFooter from "./HomoFooter";
+import population from "../../../assets/population.svg"  
+import avg from '../../../assets/AVG.svg'
+import aria from '../../../assets/aria.svg'
 
 function Hero() {
   const [currentCountryIndex, setCurrentCountryIndex] = useState(0);
@@ -8,19 +11,19 @@ function Hero() {
   const countries = [
     {
       name: "dubai",
-      flag: "src/assets/dubai.avif",
+      flag: "https://zamontour.uz/assets/images/dubai2.jpg",
     },
     {
       name: "Istambul",
-      flag: "src/assets/istambul.png",
+      flag: "https://zamontour.uz/assets/images/istanbul.jpg",
     },
     {
       name: "Antaliya",
-      flag: "src/assets/antalya.avif",
+      flag: "https://zamontour.uz/assets/images/antalya2.jpg",
     },
     {
       name: "Sharm El-Sheikh",
-      flag: "src/assets/Sharm-El-Sheikh.jpg",
+      flag: "https://zamontour.uz/assets/images/sharm.jpg",
     },
   ];
   useEffect(() => {
@@ -55,17 +58,17 @@ function Hero() {
             <HomoFooter
               name={"Population"}
               amount={"54.34 M"}
-              img={"src/assets/population.svg"}
+              img={population}
             />
             <HomoFooter
               name={"Territory:"}
               amount={"543.59 KM2"}
-              img={"src/assets/aria.svg"}
+              img={aria}
             />
             <HomoFooter
               name={"AVG Price"}
               amount={"$433.89"}
-              img={"src/assets/AVG.svg"}
+              img={avg}
             />
             <Button full={false} name='Explore More'/>
           </div>

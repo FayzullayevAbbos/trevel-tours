@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
-
+import logo from "../../../assets/logo.svg"
+ 
 function Header() {
   return (
     <header className='relative z-50 w-full'>
@@ -8,7 +9,7 @@ function Header() {
           <div className='flex items-center  gap-3'>
             <img
               className='w-[60px]  rounded-[50%]'
-              src='src/assets/logo.svg'
+            src={logo}
             />
             <div className='flex flex-col  justify-center pt-1'>
               <span className=' text-[#ffffff] text-[25px] leading-none font-bold'>
