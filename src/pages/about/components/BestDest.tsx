@@ -3,7 +3,6 @@ import {  useState } from "react";
 const BestDest = () => {
   
   function changeFullImage(index: number) {
-    setIndex(index);
     setDest((prevDestinations) =>
       prevDestinations.map((dest, i) =>
         i === index
