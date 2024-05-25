@@ -9,10 +9,10 @@ function NanLinks() {
       </a>
       <a href='#'>ENG</a>
       <a href='#'>RUS</a>
-      <a href='#'>
+      <a className="text-white" href='#'>
         <img className='w-5' src={telegram} alt='' />
       </a>
-      <a href='#'>
+      <a className="text-white" href='#'>
         <img className='w-5' src={instagram} alt='' />
       </a>
     </div>
