@@ -53,7 +53,7 @@ function Hero() {
           </h1>
           <Button full={true} name='Go There' />
         </div>
-        <div className=' absolute bottom-[-200px] hero-footer lg:max-w-[1500px]   mx-auto   w-full  '>
+        <div className=' absolute bottom-[-200px] hero-footer lg:max-w-[1500px]   mx-auto   w-[95%]  '>
           <div className='mx-5 rounded-[20px] md:rounded-[58px] bg-white grid place-content-center grid-cols-2 grid-row-2 lg:grid-cols-4'>
             <HomoFooter
             key={1}
