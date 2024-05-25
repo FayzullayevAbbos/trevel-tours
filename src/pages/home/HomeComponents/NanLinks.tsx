@@ -13,7 +13,7 @@ function NanLinks() {
         <img className='w-5' src={telegram} alt='' />
       </a>
       <a className="text-white" href='#'>
-        <img className='w-5' src={instagram} alt='' />
+        <img className='w-5 ' src={instagram} alt='' />
       </a>
     </div>
   );
