@@ -4,8 +4,8 @@ import logo from "../../../assets/logo.svg"
 function Header() {
   return (
     <header className='relative z-50 w-full'>
-      <div className='primary-bg-color w-full  px-4 fixed top-0 lg:py-3 py-5 '>
-        <div className='container mx-auto flex items-center justify-between '>
+      <div className='primary-bg-color w-full  fixed top-0 lg:py-3 py-5 '>
+        <div className='container  mx-auto flex items-center justify-between '>
           <div className='flex items-center  gap-3'>
             <img
               className='w-[60px]  rounded-[50%]'

@@ -14,8 +14,8 @@ function Navbar() {
     <nav className=''>
       <div className='lg:flex hidden items-center gap-[100px]'>
         <ul className=' flex gap-4 text-white '>
-          {navList.map((list: any) => (
-            <Link to={list.path} smooth={true} duration={500}>
+          {navList.map((list: any , id:number) => (
+            <Link key={id} to={list.path} smooth={true} duration={500}>
               <li className=' cursor-pointer py-2 px-4 text-[15px]'>
                 {list.name}
               </li>

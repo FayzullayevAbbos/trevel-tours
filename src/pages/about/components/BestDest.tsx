@@ -13,20 +13,7 @@ const BestDest = () => {
     );
   }
 
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup function to remove event listener when component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  
 
   const [destinations, setDest] = useState([
     {
@@ -70,31 +57,10 @@ const BestDest = () => {
       full: false,
     },
   ]);
-  const makeFull = () => {
-    const updatedDestinations = destinations.map((dest) => ({
-      ...dest,
-      full: false,
-    }));
-    setDest(updatedDestinations);
-  };
-  const NotMakeFull = () => {
-    setDest((prevDestinations) =>
-      prevDestinations.map((dest, i) =>
-        i === ind
-          ? { ...dest, full: true }
-          : { ...dest, full: false },
-      ),
-    );
-  };
-  useEffect(() => {
-    if (screenWidth < 600) {
-      // makeFull();
-    } else {
-      NotMakeFull();
-    }
-  }, [screenWidth]);
+  
+  
 
-  console.log("Screen width:", screenWidth);
+ 
   return (
     <section className='mt-10 lg:pb-10 pb-5 px-3 mx-auto'>
       <div className='w-full grid place-content-center gap-3 pb-20'>

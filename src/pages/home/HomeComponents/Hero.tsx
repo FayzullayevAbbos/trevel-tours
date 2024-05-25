@@ -41,7 +41,7 @@ function Hero() {
       style={{
         backgroundImage: `url(${countries[currentCountryIndex].flag})`,
       }}
-      className={`w-full  bg-cover  bg-center  bg-no-repeat h-[100vh]   `}
+      className={`w-full mx-auto bg-cover  bg-center  bg-no-repeat h-[100vh]   `}
     >
       <div className=' w-full h-full relative px-6 top-[-50px]'>
         <div className='w-full h-full mx-auto grid place-content-center gap-4'>
@@ -56,25 +56,28 @@ function Hero() {
         <div className=' absolute bottom-[-200px] hero-footer lg:max-w-[1500px]   mx-auto   w-full  '>
           <div className='mx-5 rounded-[20px] md:rounded-[58px] bg-white grid place-content-center grid-cols-2 grid-row-2 lg:grid-cols-4'>
             <HomoFooter
+            key={1}
               name={"Population"}
               amount={"54.34 M"}
               img={population}
             />
             <HomoFooter
+            key={2}
               name={"Territory:"}
               amount={"543.59 KM2"}
               img={aria}
             />
             <HomoFooter
+            key={3}
               name={"AVG Price"}
               amount={"$433.89"}
               img={avg}
             />
             <Button full={false} name='Explore More'/>
           </div>
-          <div className='grid grid-cols-4  lg:mx-[100px] mx-5 gap-10 mt-10 lg:mt-[80px]'>
+          <div className='grid grid-cols-4    gap-10 mt-10 '>
             {countries.map((_, i) => (
-              <div onClick={()=> {
+              <div key={i+100} onClick={()=> {
                 setCurrentCountryIndex(i)
               }} className='w-full h-[2px] lg:h-[3px] bg-white cursor-pointer'>
                 <div
