@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 const BestDest = () => {
-  const [ind, setIndex] = useState<Number>(0);
+  
   function changeFullImage(index: number) {
     setIndex(index);
     setDest((prevDestinations) =>

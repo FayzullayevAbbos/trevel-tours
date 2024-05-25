@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const VisaSupport: React.FC = () => {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<any>(null);
   const nextSlide = () => {
     sliderRef.current.slickNext();
   };

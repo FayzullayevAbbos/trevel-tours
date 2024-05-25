@@ -1,5 +1,5 @@
 import Button from "../../../components/Button";
-import ReservCard from "./ReservCard";
+
 
 function Reserv() {
   
