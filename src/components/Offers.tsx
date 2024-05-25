@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 function Offers() {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<any>(null);
   const nextSlide = () => {
     sliderRef.current.slickNext();
   };

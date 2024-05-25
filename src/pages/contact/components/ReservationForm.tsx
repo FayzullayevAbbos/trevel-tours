@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { useRef } from "react";
 
 const ReservationForm: React.FC = () => {
-  const name = useRef(null);
-  const numberPhone = useRef(null);
-  const geats = useRef(null);
-  const date = useRef(null);
-  const dest = useRef(null);
-  const count = useRef(null);
+  const name = useRef<any>(null);
+  const numberPhone = useRef<any>(null);
+  const geats = useRef<any>(null);
+  const date = useRef<any>(null);
+  const dest = useRef<any>(null);
+  const count = useRef<any>(null);
 
-  function sendToTelegramBot(event) {
+  function sendToTelegramBot(event:any) {
     event.preventDefault();
     const token = "7012841524:AAG9C_93leiSPTovp8uX9aaoAm9kf_sA5_g";
     const botId = 6965624520;
@@ -29,11 +29,11 @@ destination:${dest.current.value}
 Country : ${count.current.value}`,
       },
     })
-      .then((res) => {
+      .then(() => {
         name.current.value = null;
         numberPhone.current.value = null;
       })
-      .catch((error) => {
+      .catch(() => {
         console.log("Xata");
       });
   }
