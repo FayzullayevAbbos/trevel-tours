@@ -1,21 +1,30 @@
+import "./App.css";
+import Footer from "./components/Footer";
 
-import './App.css'
-import Offers from './components/Offers'
-import VisaSupport from './components/VisaSupport'
-import About from './pages/about/About'
-import HomePage from './pages/home/HomePage'
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
+import HomePage from "./pages/home/HomePage";
+import Tours from "./pages/tours/Tours";
+import { Element } from "react-scroll";
 
 function App() {
-  
-
   return (
     <>
-     <HomePage/>
-     <Offers/>
-     <VisaSupport/>
-     <About/>
+      <Element name='/' className='element'>
+        <HomePage />
+      </Element>
+      <Element name='tours' className='element'>
+        <Tours />
+      </Element>
+      <Element name='about' className='element'>
+        <About />
+      </Element>
+      <Element name='contacts' className='element'>
+        <Contact />
+      </Element>
+      <Footer/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

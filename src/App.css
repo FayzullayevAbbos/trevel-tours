@@ -43,3 +43,20 @@
     width: 100%;
   }
 }
+@media (min-width: 340px) {
+  .h-res {
+    height: auto;
+  }
+}
+.slick-dots{
+  display: none !important;
+}
+
+.custom-grid {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+}
+@media (min-width: 640px) {
+  .custom-grid {
+    grid-template-columns: repeat(11, minmax(0, 1fr)) !important;
+  }
+}

@@ -1,13 +1,25 @@
+// import { Link,  } from 'react-scroll';
+
+import { Link } from "react-scroll";
 import NanLinks from "./NanLinks";
 
 function Navbar() {
-  const navList: string[] = ["Home", "About", "Tours", "Contact"];
+  const navList: any = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "about" },
+    { name: "Tours", path: "tours" },
+    { name: "Contact", path: "contacts" },
+  ];
   return (
     <nav className=''>
       <div className='lg:flex hidden items-center gap-[100px]'>
         <ul className=' flex gap-4 text-white '>
-          {navList.map((list) => (
-            <li className=' cursor-pointer py-2 px-4 text-[15px]'>{list}</li>
+          {navList.map((list: any) => (
+            <Link to={list.path} smooth={true} duration={500}>
+              <li className=' cursor-pointer py-2 px-4 text-[15px]'>
+                {list.name}
+              </li>
+            </Link>
           ))}
         </ul>
         <NanLinks/>

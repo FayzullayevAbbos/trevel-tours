@@ -7,6 +7,7 @@ function HomePage() {
     <div className='w-full    '>
       <Header />
       <Hero />
+      
     </div>
   );
 }

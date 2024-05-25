@@ -29,13 +29,13 @@ const Offer: React.FC<CityCardProps> = ({
           className='h-full w-full'
         />
       </div>
-      <div className='p-6 absolute top-[50%] right-0 -translate-y-1/2 bg-white rounded-xl h-[70%] lg:h-auto shadow-2xl flex flex-col justify-between '>
+      <div className='p-6 absolute top-[50%] right-0 -translate-y-1/2 bg-white rounded-xl md:h-[70%] h-res xl:h-auto shadow-2xl flex flex-col justify-between '>
         <div className='flex  justify-between items-center'>
           <div className=''>
             <h2 className='text-xl font-semibold text-gray-800'>
               {cityName}
             </h2>
-            <p className='text-gray-600 flex items-center'>
+            <p className='text-gray-600 md:text-[12px] text-[12px]  lg:text-[16px] sm:text-[16px] flex items-center'>
               <svg
                 className='w-4 h-4 mr-1'
                 fill='currentColor'
@@ -48,7 +48,7 @@ const Offer: React.FC<CityCardProps> = ({
             </p>
           </div>
 
-          <div className='mt-2 text-teal-500 text-xl font-semibold'>
+          <div className='mt-2 md:text-[12px] text-[12px]  lg:text-[16px] sm:text-[16px]  text-teal-500  font-semibold'>
             ${price}
           </div>
         </div>
@@ -57,7 +57,7 @@ const Offer: React.FC<CityCardProps> = ({
           <h3 className='text-gray-700 font-semibold'>
             Deal includes:
           </h3>
-          <ul className='mt-2 text-gray-600'>
+          <ul className='mt-2 text-gray-600 md:text-[12px] text-[12px]  lg:text-[16px] sm:text-[16px] '>
             {deals.map((deal, index) => (
               <li key={index} className='flex items-center mt-1'>
                 <svg

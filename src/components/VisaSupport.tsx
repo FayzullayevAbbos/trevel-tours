@@ -1,10 +1,88 @@
-import React from "react";
-import VisaCard from "./VisaCard";
+import React, { useRef } from "react";
+
+import Slider from "react-slick";
+import Card from "./Card";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const VisaSupport: React.FC = () => {
+  const sliderRef = useRef(null);
+  const nextSlide = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previousSlide = () => {
+    sliderRef.current.slickPrev();
+  };
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    responsive: [
+      {
+        breakpoint: 1380,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 620,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const visaSupportData = [
+    {
+      country: "China",
+      image: "https://zamontour.uz/assets/images/china.jpg",
+      checkIns: 234,
+      benefits: [
+        "Best Prices",
+        "Short Processing Time",
+        "Trustworthy Assistance",
+      ],
+    },
+    {
+      country: "Hong Kong",
+      image: "https://zamontour.uz/assets/images/hongkong.jpg",
+      checkIns: 234,
+      benefits: [
+        "Best Prices",
+        "Short Processing Time",
+        "Trustworthy Assistance",
+      ],
+    },
+    {
+      country: "European (Schengen)",
+      image: "https://zamontour.uz/assets/images/europe.jpeg",
+      checkIns: 234,
+      benefits: [
+        "Best Prices",
+        "Short Processing Time",
+        "Trustworthy Assistance",
+      ],
+    },
+  ];
   return (
     <section className='py-12 bg-gray-100'>
-      <div className='container mx-auto px-4'>
+      <div className='xl:container mx-auto px-4'>
         <h2 className='text-3xl font-semibold text-center mb-8'>
           Visa Support
         </h2>
@@ -13,9 +91,40 @@ const VisaSupport: React.FC = () => {
           We provide seamless assistance and comprehensive guidance,
           ensuring a smooth journey.
         </p>
-        <VisaCard />
+
+        <div className='slider-container  md:overflow-hidden  xl:container  lg:mx-auto  lg:gap-10 '>
+          <Slider ref={(slider) => slider} {...settings}>
+            <div className=''>
+              <Card
+                key={1}
+                benefits={visaSupportData[0].benefits}
+                checkIns={visaSupportData[0].checkIns}
+                country={visaSupportData[0].country}
+                image={visaSupportData[0].image}
+              />
+            </div>
+            <div className=''>
+              <Card
+                key={2}
+                benefits={visaSupportData[1].benefits}
+                checkIns={visaSupportData[1].checkIns}
+                country={visaSupportData[1].country}
+                image={visaSupportData[1].image}
+              />
+            </div>
+            <div className=''>
+              <Card
+                key={3}
+                benefits={visaSupportData[2].benefits}
+                checkIns={visaSupportData[2].checkIns}
+                country={visaSupportData[2].country}
+                image={visaSupportData[2].image}
+              />
+            </div>
+          </Slider>
+        </div>
         <div className='flex justify-center items-center  gap-3 '>
-          <div className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '>
+          <div onClick={previousSlide} className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
@@ -24,7 +133,7 @@ const VisaSupport: React.FC = () => {
               <path d='M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z'></path>
             </svg>
           </div>
-          <div className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '>
+          <div onClick={nextSlide} className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
