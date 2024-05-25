@@ -14,7 +14,7 @@ const VisaSupport: React.FC = () => {
   const previousSlide = () => {
     sliderRef.current.slickPrev();
   };
-  const settings = {
+  const settings:any = {
     dots: true,
     infinite: true,
     slidesToShow: 3,
