@@ -4,8 +4,10 @@ import Slider from "react-slick";
 import Card from "./Card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from "react-i18next";
 
 const VisaSupport: React.FC = () => {
+  const [t] = useTranslation()
   const sliderRef = useRef<any>(null);
   const nextSlide = () => {
     sliderRef.current.slickNext();
@@ -84,7 +86,7 @@ const VisaSupport: React.FC = () => {
     <section className='py-12 bg-gray-100'>
       <div className='xl:container mx-auto px-4'>
         <h2 className='text-3xl font-semibold text-center mb-8'>
-          Visa Support
+          {t("visaSupport")}
         </h2>
         <p className='mx-auto  mb-12 lg:max-w-[627px] text-center leading-8 text-[#AFAFAF]'>
           Experience stress-free travel with our expert visa support.

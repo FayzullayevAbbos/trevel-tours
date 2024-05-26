@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 interface CityCardProps {
  
@@ -18,6 +19,8 @@ const Offer: React.FC<CityCardProps> = ({
   checkIns,
   deals,
 }) => {
+
+  const [t] = useTranslation()
   return (
     <div
       className='flex flex-col w-full relative bg-white rounded-l-2xl overflow-hidden '   
@@ -44,7 +47,7 @@ const Offer: React.FC<CityCardProps> = ({
               >
                 <path d='M10 2a6 6 0 00-6 6c0 4.41 6 10 6 10s6-5.59 6-10a6 6 0 00-6-6zM7 8a3 3 0 116 0 3 3 0 01-6 0z'></path>
               </svg>
-              {checkIns} Check-ins
+              {checkIns} {t("offersLoc")}
             </p>
           </div>
 
@@ -55,7 +58,7 @@ const Offer: React.FC<CityCardProps> = ({
 
         <div className='my-2'>
           <h3 className='text-gray-700 font-semibold'>
-            Deal includes:
+            {t("offersDealIncludes")}
           </h3>
           <ul className='mt-2 text-gray-600 md:text-[12px] text-[12px]  lg:text-[16px] sm:text-[16px] '>
             {deals.map((deal, index) => (
@@ -68,12 +71,12 @@ const Offer: React.FC<CityCardProps> = ({
                 >
                   <path d='M10 2a6 6 0 00-6 6c0 4.41 6 10 6 10s6-5.59 6-10a6 6 0 00-6-6zM7 8a3 3 0 116 0 3 3 0 01-6 0z'></path>
                 </svg>
-                {deal}
+                {t(deal)}
               </li>
             ))}
           </ul>
         </div>
-        <Button full={false} name='Make a Reservation' />
+        <Button full={false} name={t("offersButton")} />
       </div>
     </div>
   );

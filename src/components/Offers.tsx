@@ -3,9 +3,11 @@ import Offer from "./Offer";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from "react-i18next";
 
 
 function Offers() {
+  const [t] = useTranslation()
   const sliderRef = useRef<any>(null);
   const nextSlide = () => {
     sliderRef.current.slickNext();
@@ -52,48 +54,46 @@ function Offers() {
   const cities = [
     {
       imageUrl: "https://zamontour.uz/assets/images/deals-04.jpg",
-      cityName: "Istanbul",
+      cityName: "heroIstambul",
       price: 420,
       checkIns: 234,
       deals: [
-        "5 Days Trip + Hotel Included",
-        "Airplane Bill Included",
-        "Daily Places Visit",
+        "offersDeal1",
+        "offersDeal2",
+        "offersDeal3",
       ],
     },
     {
       imageUrl: "https://zamontour.uz/assets/images/offers-02.jpg",
-      cityName: "Dubai",
+      cityName: "heroDubai",
       price: 700,
       checkIns: 300,
       deals: [
-        "5 Days Trip + Hotel Included",
-        "Airplane Bill Included",
-        "Daily Places Visit",
+        "offersDeal1",
+        "offersDeal2",
+        "offersDeal3",
       ],
     },
     {
       imageUrl: "https://zamontour.uz/assets/images/deals-01.jpg",
-      cityName: "Antalya",
+      cityName: "heroAntalya",
       price: 999,
       checkIns: 500,
       deals: [
-        "5 Days Trip + Hotel Included",
-        "Airplane Bill Included",
-        "Daily Places Visit",
+        "offersDeal1",
+        "offersDeal2",
+        "offersDeal3",
       ],
     },
   ];
   return (
-    <section className='mt-10 lg:pb-10 pb-5  mx-auto'>
+    <section className='mt-10 ove lg:pb-10 pb-5  mx-auto'>
       <div className='w-full grid place-content-center gap-3 pb-20'>
         <span className='text-center font-bold text-[30px]'>
-          Best Weekly Offers In Each City
+         {t("bestOffers")}
         </span>
-        <span className='lg:max-w-[627px] text-center leading-8 text-[#AFAFAF]'>
-          Discover the best weekly offers in each city, curated just
-          for you. Immerse yourself in a world of savings and indulge
-          in unparalleled experiences.
+        <span className='w-[80%] mx-auto text-center leading-8 text-[#AFAFAF]'>
+          {t( "discoverBestOffers")}
         </span>
       </div>
       <div className=' px-3 '>
@@ -106,7 +106,7 @@ function Offers() {
                 <Offer
                   key={1}
                   imageUrl={cities[0].imageUrl}
-                  cityName={cities[0].cityName}
+                  cityName={t(cities[0].cityName)}
                   price={cities[0].price}
                   checkIns={cities[0].checkIns}
                   deals={cities[0].deals}

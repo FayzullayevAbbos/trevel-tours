@@ -61,7 +61,7 @@ const BestDest = () => {
 
  
   return (
-    <section className='mt-10 lg:pb-10 pb-5 px-3 mx-auto'>
+    <section className='mt-10 lg:pb-10 pb-5 px-3 mx-auto ove'>
       <div className='w-full grid place-content-center gap-3 pb-20'>
         <span className='text-center font-bold text-[30px]'>
           Best Locations
@@ -72,7 +72,7 @@ const BestDest = () => {
           unparalleled experiences.
         </span>
       </div>
-      <div className='grid grid-cols-6 sm:grid-cols-11 grid-flow-row-dense grid-rows-1 gap-3 mx-auto w-full max-w-[760px] transition duration-1000'>
+      <div className='grid grid-cols-6 sm:grid-cols-11 grid-flow-row-dense grid-rows-1 gap-3 mx-auto w-full max-w-[760px] overflow-hidden transition duration-1000'>
         {destinations.map((destination, index: number) => (
           <div
             key={destination.name}

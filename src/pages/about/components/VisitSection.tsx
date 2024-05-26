@@ -44,7 +44,7 @@ function VisitSection() {
     },
   ];
   return (
-    <section className='py-12 '>
+    <section className='py-12 ove'>
       <div className='container mx-auto px-4 '>
         <div className='container mb-12'>
           <h2 className='md:text-4xl text-3xl font-bold text-left mb-1'>

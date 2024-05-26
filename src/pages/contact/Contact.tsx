@@ -51,9 +51,9 @@ function Contact() {
     <>
       <Reserv />
       <div className=' reltive  px-4  lg:bottom-[0] left-[50%] -translate-y-[12.5%] sm:-translate-y-[25%] lg:-translate-y-[50%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full  lg:px-[100px]    mx-auto'>
-        {contactData.map((data, id:number) => (
+        {contactData.map((data, id: number) => (
           <ReservCard
-            key={id+999}
+            key={id + 999}
             name={data.name}
             icon={data.icon}
             title={data.title}
@@ -63,13 +63,11 @@ function Contact() {
       </div>
       <div className='max-w-[1340px] w-full px-4 h-[450px]  mx-auto '>
         <iframe
-         
           className='  w-full h-full  border-none line-clamp-none rounded-t-3xl     '
           src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d322738.3816501718!2d66.73490811942924!3d39.46799700266356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1716050725878!5m2!1sen!2s'
         ></iframe>
-       
       </div>
-      <ReservationForm/>
+      <ReservationForm />
     </>
   );
 }

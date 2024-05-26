@@ -22,7 +22,7 @@ const ExploreDestinations: React.FC = () => {
   ];
 
   return (
-    <section className='py-12 '>
+    <section className='py-12 overflow-hidden'>
       <div className='container mx-auto px-4 mt-8'>
         <div className='container mb-12'>
           <h2 className='text-3xl font-semibold text-left mb-1'>

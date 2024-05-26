@@ -6,6 +6,7 @@ import Contact from "./pages/contact/Contact";
 import HomePage from "./pages/home/HomePage";
 import Tours from "./pages/tours/Tours";
 import { Element } from "react-scroll";
+import "./i18n"
 
 function App() {
   return (

@@ -6,21 +6,25 @@ import { createPortal } from "react-dom";
 import telegram from "../../../assets/telegram.svg";
 import instagram from "../../../assets/instagram.svg";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Navbar() {
   const [modal, setModal] = useState(false);
+  const [ t, i18n ] = useTranslation();
+
+  const lang = ["uz", "en", "ru"];
 
   const navList: any = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "about" },
-    { name: "Tours", path: "tours" },
-    { name: "Contact", path: "contacts" },
+    { name: "navbarHome", path: "/" },
+    { name: "navbarAbout", path: "about" },
+    { name: "navbarTours", path: "tours" },
+    { name: "navbarContacts", path: "contacts" },
   ];
   return (
     <nav className=''>
       {createPortal(
         modal ? (
-          <div className='absolute  z-[50] max-w-[600px] w-[95%]  right-[50%] translate-x-[50%] top-[80px] bg-white'>
+          <div className='absolute  z-[1000] max-w-[600px] w-[93%]  right-[50%] translate-x-[50%]   top-[80px] bg-white'>
             {navList.map((list: any, id: number) => (
               <Link
                 key={id}
@@ -29,22 +33,18 @@ function Navbar() {
                 duration={500}
               >
                 <div className=' hover:text-[#925fe2] cursor-pointer text-center py-1 border-b  '>
-                  {list.name}
+                  {t(list.name)}
                 </div>
               </Link>
             ))}
-            <div className=' hover:text-[#925fe2] cursor-pointer text-center py-1 border-b  '>
-              <a className=' cursor-pointer ' href='#'>
-                UZ
-              </a>
-            </div>
-            <div className=' hover:text-[#925fe2] cursor-pointer text-center py-1 border-b  '>
-              <a href='#'>ENG</a>
-            </div>
+            {lang.map((l: string, ind: number) => (
+              <div key={ind+8768} onClick={()=> i18n.changeLanguage(l)} className=' hover:text-[#925fe2] cursor-pointer text-center py-1 border-b  '>
+                <a className=' cursor-pointer ' href='#'>
+                  {l.toUpperCase()}
+                </a>
+              </div>
+            ))}
 
-            <div className=' hover:text-[#925fe2] cursor-pointer text-center py-1 border-b  '>
-              <a href='#'>RUS</a>
-            </div>
             <div className='  hover:text-[#925fe2] grid place-content-center cursor-pointer text-center py-1 border-b  '>
               <a href='#'>
                 <img className='w-5' src={telegram} alt='' />
@@ -73,7 +73,7 @@ function Navbar() {
               duration={500}
             >
               <li className=' cursor-pointer py-2 px-4 text-[15px]'>
-                {list.name}
+                {t(list.name)}
               </li>
             </Link>
           ))}
@@ -83,9 +83,8 @@ function Navbar() {
 
       <div className='w-7 cursor-pointer lg:hidden block '>
         {modal ? (
-
           <svg
-          onClick={()=> setModal(false)}
+            onClick={() => setModal(false)}
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 24 24'
             fill='white'
@@ -94,7 +93,7 @@ function Navbar() {
           </svg>
         ) : (
           <svg
-          onClick={()=> setModal(true)}
+            onClick={() => setModal(true)}
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 24 24'
             fill='rgba(255,255,255,1)'

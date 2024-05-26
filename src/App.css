@@ -60,3 +60,6 @@
     grid-template-columns: repeat(11, minmax(0, 1fr)) !important;
   }
 }
+.ove{
+  overflow: hidden !important;
+}
