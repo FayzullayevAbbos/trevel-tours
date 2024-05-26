@@ -10,7 +10,7 @@ function ReservCard({  icon, url, title }: Card) {
       <div className='w-14   p-4 bg-slate-300 rounded-[50%] primary-color '>
         {icon}
       </div>
-      <div className='text-black font-bold  text-[20px]'>{title}</div>
+      <div className='text-black font-bold text-center  text-[20px]'>{title}</div>
       <a className='primary-color' href=''>
         {url}
       </a>

@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 
 const VisaSupport: React.FC = () => {
-  const [t] = useTranslation()
+  const [t] = useTranslation();
   const sliderRef = useRef<any>(null);
   const nextSlide = () => {
     sliderRef.current.slickNext();
@@ -16,7 +16,7 @@ const VisaSupport: React.FC = () => {
   const previousSlide = () => {
     sliderRef.current.slickPrev();
   };
-  const settings:any = {
+  const settings: any = {
     dots: true,
     infinite: true,
     slidesToShow: 3,
@@ -52,34 +52,22 @@ const VisaSupport: React.FC = () => {
   };
   const visaSupportData = [
     {
-      country: "China",
+      country: "heroAntalya",
       image: "https://zamontour.uz/assets/images/china.jpg",
       checkIns: 234,
-      benefits: [
-        "Best Prices",
-        "Short Processing Time",
-        "Trustworthy Assistance",
-      ],
+      benefits: ["offersDeal1", "offersDeal2", "offersDeal3"],
     },
     {
-      country: "Hong Kong",
+      country: "heroIstambul",
       image: "https://zamontour.uz/assets/images/hongkong.jpg",
       checkIns: 234,
-      benefits: [
-        "Best Prices",
-        "Short Processing Time",
-        "Trustworthy Assistance",
-      ],
+      benefits: ["offersDeal1", "offersDeal2", "offersDeal3"],
     },
     {
-      country: "European (Schengen)",
+      country: "heroDubai",
       image: "https://zamontour.uz/assets/images/europe.jpeg",
       checkIns: 234,
-      benefits: [
-        "Best Prices",
-        "Short Processing Time",
-        "Trustworthy Assistance",
-      ],
+      benefits: ["offersDeal1", "offersDeal2", "offersDeal3"],
     },
   ];
   return (
@@ -89,9 +77,7 @@ const VisaSupport: React.FC = () => {
           {t("visaSupport")}
         </h2>
         <p className='mx-auto  mb-12 lg:max-w-[627px] text-center leading-8 text-[#AFAFAF]'>
-          Experience stress-free travel with our expert visa support.
-          We provide seamless assistance and comprehensive guidance,
-          ensuring a smooth journey.
+          {t("visaP")}
         </p>
 
         <div className='slider-container  md:overflow-hidden  xl:container  lg:mx-auto  lg:gap-10 '>
@@ -126,7 +112,10 @@ const VisaSupport: React.FC = () => {
           </Slider>
         </div>
         <div className='flex justify-center items-center  gap-3 '>
-          <div onClick={previousSlide} className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '>
+          <div
+            onClick={previousSlide}
+            className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
@@ -135,7 +124,10 @@ const VisaSupport: React.FC = () => {
               <path d='M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z'></path>
             </svg>
           </div>
-          <div onClick={nextSlide} className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '>
+          <div
+            onClick={nextSlide}
+            className='w-[46px] h-[46px] px-2 py-2 border-[#925FE2] border rounded-[50%] cursor-pointer text-[#925FE2] hover:text-white hover:bg-[#925FE2] '
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'

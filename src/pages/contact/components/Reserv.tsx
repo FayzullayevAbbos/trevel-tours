@@ -1,8 +1,9 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../components/Button";
 
 
 function Reserv() {
-  
+  const [t] = useTranslation()
   return (
     <section
       style={{
@@ -12,12 +13,12 @@ function Reserv() {
     >
       <div className=' w-full h-full  grid place-content-center gap-4'>
         <p className='text-white text-[20px] text-center font-medium '>
-          Book Prefered Deal Here
+          {t("reservP")}
         </p>
         <h3 className='text-white text-center text-[50px] font-bold'>
-          Make Your Reservation
+          {t("reservT")}
         </h3>
-        <Button name='Discover More' full={true} />
+        <Button name={t("reservButton")} full={true} />
       </div>
       
     </section>

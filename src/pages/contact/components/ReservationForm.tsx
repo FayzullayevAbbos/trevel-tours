@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const ReservationForm: React.FC = () => {
   const name = useRef<any>(null);
@@ -37,6 +38,7 @@ Country : ${count.current.value}`,
         console.log("Xata");
       });
   }
+  const [t] = useTranslation()
   return (
     <div className='max-w-[1310px] w-full px-4 bg-slate-200  rounded-b-3xl pb-20  mx-auto '>
       <form onSubmit={sendToTelegramBot} action=''>
@@ -46,7 +48,7 @@ Country : ${count.current.value}`,
               htmlFor='name'
               className='block text-sm font-medium text-gray-400 px-4 mb-1'
             >
-              Your Name:
+              {t("formName")}
             </label>
             <input
               ref={name}
@@ -63,7 +65,7 @@ Country : ${count.current.value}`,
               htmlFor='name'
               className='block text-sm font-medium text-gray-400 px-4  mb-1'
             >
-              Your Phone Number:
+              {t("formNumber")}
             </label>
             <input
               ref={numberPhone}
@@ -80,7 +82,7 @@ Country : ${count.current.value}`,
               htmlFor='name'
               className='block text-sm font-medium text-gray-400 px-4  mb-1'
             >
-              Number Of Guests:
+              {t("formGuet")}
             </label>
             <select
               ref={geats}
@@ -101,7 +103,7 @@ Country : ${count.current.value}`,
               htmlFor='message'
               className='block text-sm font-medium text-gray-400 px-4  mb-1'
             >
-              Special Requests
+              {t("formDate")}
             </label>
 
             <input
@@ -115,7 +117,7 @@ Country : ${count.current.value}`,
               htmlFor='dest'
               className='block text-sm font-medium text-gray-400 px-4  mb-1'
             >
-              Choose Your Destination:
+              {t("fromDest")}
             </label>
             <select
               ref={dest}
@@ -136,7 +138,7 @@ Country : ${count.current.value}`,
               htmlFor='country'
               className='block text-sm font-medium text-gray-400 px-4  mb-1'
             >
-              Choose Your Visa Support:
+              {t("formVisaSupport")}
             </label>
             <select
               ref={count}
@@ -157,7 +159,7 @@ Country : ${count.current.value}`,
               className=' w-full hover:bg-[#a279e3] md:py-3 md:px-7 py-4 px-5 text-[14px] cursor-pointer rounded-[25px] text-white bg-[#925FE2]'
               type='submit'
             >
-              Make Your Reservation Now
+             {t("formButtom")}
             </button>
           </div>
         </div>

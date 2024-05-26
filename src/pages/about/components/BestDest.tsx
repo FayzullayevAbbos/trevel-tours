@@ -1,4 +1,5 @@
 import {  useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const BestDest = () => {
   
@@ -19,7 +20,7 @@ const BestDest = () => {
       key: 1,
       name: "Dubai",
       population: "2M",
-      description: "Aholisi: 2M",
+      description: " 2M",
       imageUrl: "https://zamontour.uz/assets/images/dubai.jpg",
       full: true,
     },
@@ -27,7 +28,7 @@ const BestDest = () => {
       key: 2,
       name: "Antalya",
       population: "3.5M",
-      description: "Aholisi: 3.5M",
+      description: " 3.5M",
       imageUrl: "https://zamontour.uz/assets/images/antalya.jpg",
       full: false,
     },
@@ -35,7 +36,7 @@ const BestDest = () => {
       key: 3,
       name: "Istanbul",
       population: "4.1M",
-      description: "Aholisi: 4.1M",
+      description: " 4.1M",
       imageUrl: "https://zamontour.uz/assets/images/istanbul.jpg",
       full: false,
     },
@@ -43,7 +44,7 @@ const BestDest = () => {
       key: 4,
       name: "Sharm El-Sheikh",
       population: "4M",
-      description: "Aholisi: 4M",
+      description: " 4M",
       imageUrl: "https://zamontour.uz/assets/images/sharm.jpg",
       full: false,
     },
@@ -51,7 +52,7 @@ const BestDest = () => {
       key: 5,
       name: "Paris",
       population: "3M",
-      description: "Aholisi: 3M",
+      description: " 3M",
       imageUrl: "https://zamontour.uz/assets/images/best-05.jpg",
       full: false,
     },
@@ -59,17 +60,15 @@ const BestDest = () => {
   
   
 
- 
+ const [t] = useTranslation()
   return (
     <section className='mt-10 lg:pb-10 pb-5 px-3 mx-auto ove'>
       <div className='w-full grid place-content-center gap-3 pb-20'>
         <span className='text-center font-bold text-[30px]'>
-          Best Locations
+         {t("bestLoc")}
         </span>
         <span className='lg:max-w-[627px] text-center leading-8 text-[#AFAFAF]'>
-          Discover the best offers in each city, curated just for you.
-          Immerse yourself in a world of savings and indulge in
-          unparalleled experiences.
+         {t("bestLocAbout")}
         </span>
       </div>
       <div className='grid grid-cols-6 sm:grid-cols-11 grid-flow-row-dense grid-rows-1 gap-3 mx-auto w-full max-w-[760px] overflow-hidden transition duration-1000'>
@@ -115,7 +114,7 @@ const BestDest = () => {
                   {destination.name}
                 </h3>
                 <p className='font-meduim hidden sm:block sm:text-[14px] text-[8px]'>
-                  {destination.description}
+                  {destination.description}{t("heroPopulation")}
                 </p>
               </div>
             </div>

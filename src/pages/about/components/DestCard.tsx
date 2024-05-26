@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Button from "../../../components/Button";
 
 interface Data {
@@ -7,6 +8,7 @@ interface Data {
   description: string;
 }
 function DestCard({ image, title, about, description }: Data) {
+  const [t] = useTranslation()
   return (
     
       <div className=' overflow-hidden flex flex-col md:flex-row  container border-b pb-8'>
@@ -19,13 +21,13 @@ function DestCard({ image, title, about, description }: Data) {
           <div className=' flex justify-between items-center mb-4'>
             {" "}
             <div className=''>
-              <h3 className='text-xl font-semibold '>{title}</h3>
-              <div className='text-gray-400'>{about}</div>
+              <h3 className='text-xl font-semibold '>{t(title)}</h3>
+              <div className='text-gray-400'>{t(about)}</div>
             </div>
-            <Button full={false} name='Explore More' />
+            <Button full={false} name={t("exDestButton")} />
           </div>
 
-          <p className='text-gray-400 mb-4'>{description}</p>
+          <p className='text-gray-400 mb-4'>{t(description)}</p>
         </div>
       </div>
     
